@@ -2,17 +2,20 @@ import os
 
 LOGGER = True
 PORT = int(os.environ.get("PORT", 8080))
-OWNER_ID = int(os.environ.get("OWNER_ID", "7500587425"))
+OWNER_ID = int(os.environ.get("OWNER_ID", "5795501374"))
 BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
 DATABASE_URL = os.environ.get("DATABASE_URL", "")
 DB_URI = os.environ.get("DATABASE_URL", "")
 API_ID = int(os.environ.get("API_ID", 2040))
 API_HASH = os.environ.get("API_HASH", "b18441a1ff607e106cf4ead0914d7a42")
 
-# The missing variable
+# Critical missing vars
 SESSION = os.environ.get("SESSION", "Alya_Bot")
+WORKERS = int(os.environ.get("WORKERS", 4))
 
-# Shortener Vars
+# Shortener & Channel Vars
 SHORT_URL = os.environ.get("SHORT_URL", "")
 SHORT_API = os.environ.get("SHORT_API", "")
 SHORT_TUT = os.environ.get("SHORT_TUT", "")
+AUTH_CHANNEL = os.environ.get("AUTH_CHANNEL", "")
+LOG_CHANNEL = os.environ.get("LOG_CHANNEL", "")

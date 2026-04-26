@@ -2,7 +2,7 @@ from pyrogram import Client, filters
 from pyrogram.types import Message, CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup
 import time
 
-# import psutil
+import psutil
 import shutil
 
 #===============================================================#

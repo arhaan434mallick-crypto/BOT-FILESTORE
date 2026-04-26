@@ -3,38 +3,32 @@ from logging.handlers import RotatingFileHandler
 
 # Bot Configuration
 LOG_FILE_NAME = "bot.log"
-PORT = '5010'
-OWNER_ID = 6497757690
+PORT = 5010
+OWNER_ID = 5795501374
 
 MSG_EFFECT = 5046509860389126442
 
-SHORT_URL = "linkshortify.com" # shortner url 
-SHORT_API = "" 
+SHORT_URL = "linkshortify.com"  # shortner url
+SHORT_API = ""
 SHORT_TUT = "https://t.me/How_to_Download_7x/26"
 
 # Bot Configuration
 SESSION = "yato"
-TOKEN = "642712"
-API_ID = ""
-API_HASH = ""
+TOKEN = "8567740191:AAGnQQvv0ab6dQgRUYV_ic6h6ccZrM0vSDQ"
+API_ID = 33567817
+API_HASH = "11c1ab8bf0435a691713288882c8fbcc"
 WORKERS = 5
 
-DB_URI = "mongodb"
+DB_URI = "mongodb+srv://spotify98612_db_user:MKB9Oer5UN7eVtPS@cluster0.zvslije.mongodb.net/?appName=Cluster0"
 DB_NAME = "yato"
 
-FSUBS = [[-1003016571084, True, 10]] # Force Subscription Channels [channel_id, request_enabled, timer_in_minutes]
-# Database Channel (Primary)
-DB_CHANNEL =    # just put channel id dont add ""
-# Multiple Database Channels (can be set via bot settings)
-# DB_CHANNELS = {
-#     "-1002595092736": {"name": "Primary DB", "is_primary": True, "is_active": True},
-#     "-1001234567890": {"name": "Secondary DB", "is_primary": False, "is_active": True}
-# }
-# Auto Delete Timer (seconds)
+FSUBS = [[-1003016571084, True, 10]]  # Force Subscription Channels
+DB_CHANNEL = -1003943638923
+
 AUTO_DEL = 300
-# Admin IDs
-ADMINS = [6497757690, 6103092779]
-# Bot Settings
+
+ADMINS = [5795501374]
+
 DISABLE_BTN = True
 PROTECT = True
 
@@ -53,14 +47,22 @@ MESSAGES = {
 
 def LOGGER(name: str, client_name: str) -> logging.Logger:
     logger = logging.getLogger(name)
+
     formatter = logging.Formatter(
         f"[%(asctime)s - %(levelname)s] - {client_name} - %(name)s - %(message)s",
         datefmt='%d-%b-%y %H:%M:%S'
     )
-    file_handler = RotatingFileHandler(LOG_FILE_NAME, maxBytes=50_000_000, backupCount=10)
+
+    file_handler = RotatingFileHandler(
+        LOG_FILE_NAME,
+        maxBytes=50_000_000,
+        backupCount=10
+    )
     file_handler.setFormatter(formatter)
+
     stream_handler = logging.StreamHandler()
     stream_handler.setFormatter(formatter)
+
     logger.setLevel(logging.INFO)
     logger.addHandler(file_handler)
     logger.addHandler(stream_handler)

@@ -1,2 +1,5 @@
 pyTelegramBotAPI
 aiohttp
+motor
+pymongo
+markdown
